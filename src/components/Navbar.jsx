@@ -26,14 +26,14 @@ function Navbar() {
 
   return (
     <>
-      <div className="flex items-center w-full h-[60px] bg-white bg-opacity-95 text-black fixed top-0 left-0 z-10">
-        <div className="w-[80%] mx-auto flex justify-between items-center">
-          <div
+      <header className="flex items-center w-full h-[60px] bg-white bg-opacity-95 text-black fixed top-0 left-0 z-10">
+        <nav className="w-[80%] mx-auto flex justify-between items-center">
+          <h1
             onClick={() => navigate("/")}
-            className="text-secondary-500 hover:cursor-pointer"
+            className="text-secondary-500 text-2xl font-bold hover:cursor-pointer"
           >
             {title}
-          </div>
+          </h1>
 
           <div className="flex justify-between space-x-5 z-10">
             <button className="text-black">
@@ -49,7 +49,7 @@ function Navbar() {
               className="text-black relative"
             >
               {cart.length > 0 && (
-                <span className="absolute right-1 top-1 bg-red-500 text-white text-xs w-4 h-4 rounded-full flex items-center justify-center">
+                <span className="absolute right-0 top-0 bg-red-500 text-white text-xs w-4 h-4 rounded-full flex items-center justify-center">
                   {cart.length}
                 </span>
               )}
@@ -60,8 +60,8 @@ function Navbar() {
               <MenuOutlined />
             </button>
           </div>
-        </div>
-      </div>
+        </nav>
+      </header>
     </>
   );
 }

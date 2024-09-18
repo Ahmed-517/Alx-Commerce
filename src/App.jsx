@@ -5,7 +5,11 @@ import Footer from "./components/Footer";
 import ItemDetails from "./scenes/item/ItemDetails";
 
 import CartMenu from "./components/CartMenu";
+
 import Checkout from "./scenes/checkout/Checkout";
+import Login from "./scenes/seller/Login";
+import SellerDashboard from "./scenes/seller/SellerDashboard";
+import SellerProtectedRoute from "./scenes/seller/SellerProtectedRoute";
 
 function App() {
   return (
@@ -18,6 +22,19 @@ function App() {
           <Route path="item/:itemId" element={<ItemDetails />} />
           <Route path="checkout" element={<Checkout />} />
           {/* <Route path="checkout/success" element={<Confirmation />} /> */}
+
+          <Route path="login" element={<Login />} />
+
+          <Route
+            path="seller"
+            element={
+              <SellerProtectedRoute>
+                <SellerDashboard />
+              </SellerProtectedRoute>
+            }
+          >
+            {/* <Route index element={}/> */}
+          </Route>
         </Routes>
 
         <CartMenu />
