@@ -26,89 +26,42 @@ function Navbar() {
 
   return (
     <>
-      {/* <nav className="fixed bg-white/95 w-full h-[60px] top-0 left-0 z-10">
-        <div className="flex justify-between items-center h-full container">
-          <h2 className="">{title}</h2>
-          <div className="flex gap-2 text-lg">
-            <IoMdSearch />
-            <IoPersonOutline />
-            <div>
-              <MdOutlineShoppingBag />
-            </div>
-            <RxHamburgerMenu />
-          </div>
-        </div>
-      </nav> */}
-      <Box
-        display="flex"
-        alignItems="center"
-        width="100%"
-        height="60px"
-        backgroundColor="rgba(255, 255, 255, 0.95)"
-        color="black"
-        position="fixed"
-        top="0"
-        left="0"
-        zIndex="1"
-      >
-        <Box
-          width="80%"
-          margin="auto"
-          display="flex"
-          justifyContent="space-between"
-          alignItems="center"
-        >
-          <Box
+      <div className="flex items-center w-full h-[60px] bg-white bg-opacity-95 text-black fixed top-0 left-0 z-10">
+        <div className="w-[80%] mx-auto flex justify-between items-center">
+          <div
             onClick={() => navigate("/")}
-            sx={{
-              "&:hover": { cursor: "pointer" },
-            }}
-            color={shades.secondary[500]}
+            className="text-secondary-500 hover:cursor-pointer"
           >
             {title}
-          </Box>
-          <Box
-            display="flex"
-            justifyContent="space-between"
-            columnGap="20px"
-            zIndex="2"
-          >
-            <IconButton sx={{ color: "black" }}>
+          </div>
+
+          <div className="flex justify-between space-x-5 z-10">
+            <button className="text-black">
               <SearchOutlined />
-            </IconButton>
+            </button>
 
-            <IconButton sx={{ color: "black" }}>
+            <button className="text-black">
               <PersonOutline />
-            </IconButton>
+            </button>
 
-            <Badge
-              badgeContent={cart.length}
-              color="secondary"
-              invisible={cart.length === 0}
-              sx={{
-                "& .MuiBadge-badge": {
-                  right: 5,
-                  top: 5,
-                  padding: "0 4px",
-                  height: "14px",
-                  minWidth: "13px",
-                },
-              }}
+            <button
+              onClick={() => dispatch(setIsCartOpen({}))}
+              className="text-black relative"
             >
-              <IconButton
-                onClick={() => dispatch(setIsCartOpen({}))}
-                sx={{ color: "black" }}
-              >
-                <ShoppingBagOutlined />
-              </IconButton>
-            </Badge>
+              {cart.length > 0 && (
+                <span className="absolute right-1 top-1 bg-red-500 text-white text-xs w-4 h-4 rounded-full flex items-center justify-center">
+                  {cart.length}
+                </span>
+              )}
+              <ShoppingBagOutlined />
+            </button>
 
-            <IconButton sx={{ color: "black" }}>
+            <button className="text-black">
               <MenuOutlined />
-            </IconButton>
-          </Box>
-        </Box>
-      </Box>
+            </button>
+          </div>
+        </div>
+      </div>
     </>
   );
 }
