@@ -1,16 +1,16 @@
 import { Box, Button, Divider, IconButton, Typography } from "@mui/material";
-import { UseSelector, useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import CloseIcon from "@mui/icons-material/Close";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 import styled from "@emotion/styled";
-import { shades } from "../../theme";
+import { shades } from "../theme";
 import {
   decreaseCount,
   increaseCount,
   removeFromCart,
   setIsCartOpen,
-} from "../../state";
+} from "../state/index";
 import { useNavigate } from "react-router-dom";
 
 const FlexBox = styled(Box)`
@@ -27,7 +27,7 @@ export default function CartMenu() {
   const isCartOpen = useSelector((state) => state.cart.isCartOpen);
 
   const totalPrice = cart.reduce((total, item) => {
-    return total + item.count * item.attributes.price;
+    return total + item.count * item.item_price;
   }, 0);
 
   return (
@@ -62,21 +62,21 @@ export default function CartMenu() {
           {/* CART LIST */}
           <Box>
             {cart.map((item) => (
-              <Box key={`${item.attributes.name}-${item.id}`}>
+              <Box key={`${item.item_name}-${item.id}`}>
                 <FlexBox p="15px 0">
                   <Box flex="1 1 40%">
                     <img
                       alt={item?.name}
                       width="123px"
                       height="164px"
-                      src={`https://aandm-store.onrender.com${item?.attributes?.image?.data?.attributes?.formats?.medium?.url}`}
+                      src={item?.item_image}
                     />
                   </Box>
                   <Box flex="1 1 60%">
                     {/* ITEM NAME */}
                     <FlexBox mb="5px">
                       <Typography fontWeight="bold">
-                        {item.attributes.name}
+                        {item.item_name}
                       </Typography>
                       <IconButton
                         onClick={() =>
@@ -87,9 +87,7 @@ export default function CartMenu() {
                       </IconButton>
                     </FlexBox>
                     {/* <Typography>{item.attributes.shortDescription}</Typography> */}
-                    <Typography>
-                      {item?.attributes?.shortDescription[0].children[0].text}
-                    </Typography>
+                    <Typography>{item?.short_description}</Typography>
 
                     {/* AMOUNT */}
                     <FlexBox m="15px 0">
@@ -119,7 +117,7 @@ export default function CartMenu() {
 
                       {/* PRICE */}
                       <Typography fontWeight="bold">
-                        ${item.attributes.price}
+                        ${item.item_price}
                       </Typography>
                     </FlexBox>
                   </Box>

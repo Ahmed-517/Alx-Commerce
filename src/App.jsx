@@ -4,6 +4,9 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ItemDetails from "./scenes/item/ItemDetails";
 
+import CartMenu from "./components/CartMenu";
+import Checkout from "./scenes/checkout/Checkout";
+
 function App() {
   return (
     <div className="m-auto">
@@ -13,11 +16,11 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="item/:itemId" element={<ItemDetails />} />
-          {/* <Route path="checkout" element={<Checkout />} /> */}
+          <Route path="checkout" element={<Checkout />} />
           {/* <Route path="checkout/success" element={<Confirmation />} /> */}
         </Routes>
 
-        {/* <CartMenu /> */}
+        <CartMenu />
         <Footer />
       </BrowserRouter>
     </div>

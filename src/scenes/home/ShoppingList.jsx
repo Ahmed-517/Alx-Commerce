@@ -21,6 +21,15 @@ export default function ShoppingList() {
       .from("alx_commerce_items")
       .select("*");
 
+    /*
+        item_name
+        short_description
+        long_description
+        item_image
+        item_price
+        item_category
+      */
+
     // const itemsJson = await items.json();
     dispatch(setItems(alx_commerce_items));
   }
