@@ -6,12 +6,11 @@ This e-commerce project was built as part of our ALX portfolio to apply the soft
 
 ## Live Demo & Blog
 
-- **Deployed Site**: [E-commerce Website](https://your-deployed-site-link.com)
-- **Final Project Blog Article**: [Read the full journey](https://your-blog-article-link.com)
+- **Deployed Site**: [E-commerce Website](https://alx-commerce.vercel.app/)
 - **Author LinkedIn**:
-    - [Ahmed Gamal](https://www.linkedin.com/in/ahmedgamal)
-    - [Morris Ampomah](https://www.linkedin.com/in/morrisampomah)
-    - [Abdelhady Mohammed](https://www.linkedin.com/in/abdelhadymohammed)
+    - [Ahmed Gamal](https://www.linkedin.com/in/ahmed-gamal17?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app)
+    - [Morris Ampomah](https://www.linkedin.com/in/morris-ampomah-219738216?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app)
+    - [Abdelhady Mohammed](https://www.linkedin.com/in/abdelhady-mohammed-752783198?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app)
 
 ## Installation
 
@@ -67,7 +66,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Screenshot
 
 Here is a glimpse of the application in action:
-
+![image](https://github.com/user-attachments/assets/a998bfc0-15e1-48f2-93aa-11c634fb70be)
+![image](https://github.com/user-attachments/assets/707144db-646b-4bc0-b3b7-95c1615d57b6)
+![image](https://github.com/user-attachments/assets/8ecd344c-0046-4dd4-bba4-8bd9b79da251)
 
 ---
 
